@@ -1,4 +1,4 @@
-package com.somi.restager.work.menu;
+package com.somi.restager.work.menu.data;
 
 public class Plate {
 

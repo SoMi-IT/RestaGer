@@ -9,34 +9,53 @@
     android:gravity="center">
 
     <Button
-        android:id="@+id/ib_menu_sew"
+        android:id="@+id/ib_menu_orders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginStart="4sp"
         android:layout_marginEnd="2sp"
         android:backgroundTint="@color/white_300"
-        android:text="ORDERS"/>
+        android:text="ORDERS"
+        android:textSize="12sp"
+        android:maxLines="1"/>
 
     <Button
-        android:id="@+id/ib_menu_knit"
+        android:id="@+id/ib_menu_tables"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginStart="2sp"
         android:layout_marginEnd="2sp"
         android:backgroundTint="@color/white_300"
-        android:text="TABLES"/>
+        android:text="TABLES"
+        android:textSize="12sp"
+        android:maxLines="1"/>
 
     <Button
-        android:id="@+id/ib_menu_shop"
+        android:id="@+id/ib_menu_waiters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="2sp"
+        android:layout_marginEnd="2sp"
+        android:backgroundTint="@color/white_300"
+        android:text="WAITERS"
+        android:textSize="12sp"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/ib_menu_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginStart="2sp"
         android:layout_marginEnd="4sp"
         android:backgroundTint="@color/white_300"
-        android:text="WAITERS"/>
+        android:text="MENU"
+        android:textSize="12sp"
+        android:maxLines="1"/>
 
 
-    </LinearLayout>
+
+</LinearLayout>

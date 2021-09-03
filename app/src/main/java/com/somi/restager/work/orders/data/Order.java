@@ -1,4 +1,4 @@
-package com.somi.restager.work.orders;
+package com.somi.restager.work.orders.data;
 
 
 import java.util.ArrayList;
@@ -16,9 +16,10 @@ public class Order {
 
     public final static int ORDER_STATUS_STARTED = 0;
     public final static int ORDER_STATUS_PREPARATION = 1;
-    public final static int ORDER_STATUS_INCOMING = 2;
-    public final static int ORDER_STATUS_DELIVERED = 3;
-    public final static int ORDER_STATUS_DISMISSED = 4;
+    public final static int ORDER_STATUS_READY = 2;
+    public final static int ORDER_STATUS_INCOMING = 3;
+    public final static int ORDER_STATUS_DELIVERED = 4;
+    public final static int ORDER_STATUS_DISMISSED = 5;
 
     private int id;
     private ArrayList<OrderedPlate> orderedPlates;
@@ -30,7 +31,7 @@ public class Order {
 
     public int getId() { return id; }
 
-    public ArrayList<OrderedPlate> getName() { return orderedPlates; }
+    public ArrayList<OrderedPlate> getOrderedPlates() { return orderedPlates; }
 
     public String getTime() { return time; }
 
@@ -43,7 +44,7 @@ public class Order {
 
     public void setId(int _id) { id = _id; }
 
-    public void setName(ArrayList<OrderedPlate> _orderedPlates) { orderedPlates = _orderedPlates; }
+    public void setOrderedPlates(ArrayList<OrderedPlate> _orderedPlates) { orderedPlates = _orderedPlates; }
 
     public void setTime(String _time) { time = _time; }
 

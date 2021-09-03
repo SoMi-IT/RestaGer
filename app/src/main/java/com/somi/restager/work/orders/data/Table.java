@@ -1,4 +1,4 @@
-package com.somi.restager.work.orders;
+package com.somi.restager.work.orders.data;
 
 public class Table {
 

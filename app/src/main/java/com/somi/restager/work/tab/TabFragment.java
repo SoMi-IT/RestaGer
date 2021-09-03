@@ -19,6 +19,7 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
     public static int MENU_ORDERS = 0;
     public static int MENU_TABLES = 1;
     public static int MENU_WAITERS = 2;
+    public static int MENU_MENU = 3;
 
     private WorkActivity activity;
 
@@ -27,7 +28,7 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
     private Button b_orders;
     private Button b_tables;
     private Button b_waiters;
-
+    private Button b_menu;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,14 +38,18 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
 
         View rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
 
-        b_orders = rootView.findViewById(R.id.ib_menu_sew);
+        b_orders = rootView.findViewById(R.id.ib_menu_orders);
         b_orders.setOnClickListener(this);
 
-        b_tables = rootView.findViewById(R.id.ib_menu_knit);
+        b_tables = rootView.findViewById(R.id.ib_menu_tables);
         b_tables.setOnClickListener(this);
 
-        b_waiters = rootView.findViewById(R.id.ib_menu_shop);
+        b_waiters = rootView.findViewById(R.id.ib_menu_waiters);
         b_waiters.setOnClickListener(this);
+
+        b_menu = rootView.findViewById(R.id.ib_menu_menu);
+        b_menu.setOnClickListener(this);
+
 
         activity.setMenuListener(this);
 
@@ -62,10 +67,12 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
         b_orders.setBackgroundTintList(activity.getColorStateList(R.color.white_300));
         b_tables.setBackgroundTintList(activity.getColorStateList(R.color.white_300));
         b_waiters.setBackgroundTintList(activity.getColorStateList(R.color.white_300));
+        b_menu.setBackgroundTintList(activity.getColorStateList(R.color.white_300));
 
         if(position == MENU_ORDERS) b_orders.setBackgroundTintList(activity.getColorStateList(R.color.blue_700));
         if(position == MENU_TABLES) b_tables.setBackgroundTintList(activity.getColorStateList(R.color.blue_700));
         if(position == MENU_WAITERS) b_waiters.setBackgroundTintList(activity.getColorStateList(R.color.blue_700));
+        if(position == MENU_MENU) b_menu.setBackgroundTintList(activity.getColorStateList(R.color.blue_700));
 
     }//changeSelectedTab
 
@@ -75,6 +82,7 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
         if (v == b_orders && listener!= null) listener.OnOrdersSelected();
         if (v == b_tables && listener!= null) listener.OnTablesSelected();
         if (v == b_waiters && listener!= null) listener.OnWaitersSelected();
+        if (v == b_menu && listener!= null) listener.OnMenuSelected();
 
     }//onClick
 

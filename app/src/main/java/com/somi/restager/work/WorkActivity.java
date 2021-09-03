@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.somi.restager.R;
+import com.somi.restager.work.menu.MenuFragment;
 import com.somi.restager.work.tab.TabFragment;
 import com.somi.restager.work.tab.TabFragmentListener;
 import com.somi.restager.work.orders.OrdersFragment;
@@ -41,15 +42,13 @@ public class WorkActivity extends AppCompatActivity implements TabFragmentListen
 
         vp_main = findViewById(R.id.vp_main_container);
 
-        TabFragment tabFragment = new TabFragment();
-        initMenuFragment(tabFragment);
-
-        TopBarFragment topBarFragment = new TopBarFragment();
-        initTopBar(topBarFragment);
+        initMenuFragment(new TabFragment());
+        initTopBar(new TopBarFragment());
 
         fragments.add(new OrdersFragment());
         fragments.add(new TablesFragment());
         fragments.add(new WaitersFragment());
+        fragments.add(new MenuFragment());
 
         PagerAdapter pagerAdapter = new PagerAdapter(super.getSupportFragmentManager(), fragments);
         vp_main.setAdapter(pagerAdapter);
@@ -91,14 +90,15 @@ public class WorkActivity extends AppCompatActivity implements TabFragmentListen
 
     }//setMenuListener
 
-    @Override
-    public void OnOrdersSelected() { vp_main.setCurrentItem(TabFragment.MENU_ORDERS); }//OnAccountSelected
+    //-------------------TabFragmentListener
+    public void OnOrdersSelected() { vp_main.setCurrentItem(TabFragment.MENU_ORDERS); }
 
-    @Override
-    public void OnTablesSelected() { vp_main.setCurrentItem(TabFragment.MENU_TABLES); }//OnDiscoverSelected
+    public void OnTablesSelected() { vp_main.setCurrentItem(TabFragment.MENU_TABLES); }
 
-    @Override
-    public void OnWaitersSelected() { vp_main.setCurrentItem(TabFragment.MENU_WAITERS); }//OnChatSelected
+    public void OnWaitersSelected() { vp_main.setCurrentItem(TabFragment.MENU_WAITERS); }
+
+    public void OnMenuSelected() { vp_main.setCurrentItem(TabFragment.MENU_MENU); }
+
 
 
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }//onPageScrolled

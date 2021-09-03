@@ -6,9 +6,12 @@
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/activity_work.xml" value="0.33" />
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_menu.xml" value="0.483695652173913" />
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_orders.xml" value="0.483695652173913" />
+        <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_orders_filter.xml" value="0.483695652173913" />
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_tables.xml" value="0.483695652173913" />
+        <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_tabs.xml" value="0.483695652173913" />
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_top_bar.xml" value="0.483695652173913" />
         <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/fragment_waiters.xml" value="0.483695652173913" />
+        <entry key="..\:/AdroidStudioProjects/RestaGer/app/src/main/res/layout/item_order.xml" value="0.5" />
       </map>
     </option>
   </component>
