@@ -6,27 +6,36 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:gravity="center|end"
-    android:background="@color/blue_700">
+    android:gravity="center|center_horizontal"
+    android:background="@color/dark_800">
 
         <TextView
-            android:id="@+id/tv_top_bar_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8sp"
-            android:text="FirstName LastName"
+            android:layout_weight="1"
+            android:text="Filter:"
             android:textSize="16sp"
-            android:textColor="@color/white_300"
+            android:textColor="@color/white_100"
             android:textAlignment="viewEnd"/>
 
-        <ImageView
-            android:id="@+id/iv_top_bar_user"
-            android:layout_width="36sp"
-            android:layout_height="36sp"
-            android:layout_margin="10sp"
-            android:src="@drawable/ic_user"
-            android:scaleType="centerInside"
-            app:tint="@color/white_300"
+        <Spinner
+            android:id="@+id/s_orders_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"
+            android:backgroundTint="@color/white_100"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/ib_orders_filter"
+            android:layout_width="46sp"
+            android:layout_height="46sp"
+            android:layout_margin="6sp"
+            android:src="@drawable/ic_arrow_up"
+            android:scaleType="fitCenter"
+            app:tint="@color/white_100"
+            android:backgroundTint="@color/blue_700"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

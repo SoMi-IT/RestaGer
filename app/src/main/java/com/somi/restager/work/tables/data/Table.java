@@ -1,10 +1,11 @@
-package com.somi.restager.work.orders.data;
+package com.somi.restager.work.tables.data;
 
 public class Table {
 
 
     public final static String TABLE_ID = "table_id";
     public final static String TABLE_IS_INSIDE = "table_is_inside";
+    public final static String TABLE_IS_FREE = "table_is_free";
     public final static String TABLE_ROOM = "table_room";
     public final static String TABLE_NUMBER = "table_number";
     public final static String TABLE_SEATS = "table_seats";
@@ -12,6 +13,7 @@ public class Table {
 
     private int id;
     private boolean isInside;
+    private boolean isFree;
     private String room;
     private int number;
     private int seats;
@@ -21,6 +23,8 @@ public class Table {
     public int getId() { return id; }
 
     public boolean isInside() { return isInside; }
+
+    public boolean isFree() { return isFree; }
 
     public String getRoom() { return room; }
 
@@ -34,6 +38,8 @@ public class Table {
     public void setId(int _id) { id = _id; }
 
     public void setInside(boolean _isInside) { isInside = _isInside; }
+
+    public void setFree(boolean _isFree) { isFree = _isFree; }
 
     public void setRoom(String _room) { room = _room; }
 

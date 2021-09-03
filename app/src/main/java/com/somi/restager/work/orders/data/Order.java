@@ -2,6 +2,7 @@ package com.somi.restager.work.orders.data;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class Order {
@@ -23,7 +24,7 @@ public class Order {
 
     private int id;
     private ArrayList<OrderedPlate> orderedPlates;
-    private String time;
+    private Date time;
     private int tableId;
     private int status;
     private String notes;
@@ -33,7 +34,7 @@ public class Order {
 
     public ArrayList<OrderedPlate> getOrderedPlates() { return orderedPlates; }
 
-    public String getTime() { return time; }
+    public Date getTime() { return time; }
 
     public int getTableId() { return tableId; }
 
@@ -46,7 +47,7 @@ public class Order {
 
     public void setOrderedPlates(ArrayList<OrderedPlate> _orderedPlates) { orderedPlates = _orderedPlates; }
 
-    public void setTime(String _time) { time = _time; }
+    public void setTime(Date _time) { time = _time; }
 
     public void setTableId(int _tableId) { tableId = _tableId; }
 

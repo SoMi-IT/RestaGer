@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.somi.restager.R;
 import com.somi.restager.work.orders.data.Order;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -32,13 +33,11 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
 
     }//constructor
 
-    public void updateOrders(ArrayList<Order> _orders, int donePosition, int currentPosition, int newPosition) {
+    public void updateOrders(ArrayList<Order> _orders) {
 
 
         orders = _orders;
-        notifyItemChanged(donePosition);
-        notifyItemChanged(currentPosition);
-        notifyItemChanged(newPosition);
+        notifyDataSetChanged();
 
     }//constructor
 
@@ -73,7 +72,7 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
 
         holder.tv_id.setText(order.getId()+"");
         holder.tv_table.setText(order.getTableId()+"");
-        holder.tv_time.setText(order.getTime());
+        holder.tv_time.setText(new SimpleDateFormat("HH:mm").format(order.getTime()));
         holder.tv_plates.setText(order.getOrderedPlates().size()+"");
 
         holder.iv_notes.setOnClickListener(v -> {
