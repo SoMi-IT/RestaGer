@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/ib_menu_sew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4sp"
+        android:layout_marginEnd="2sp"
+        android:backgroundTint="@color/white_300"
+        android:text="ORDERS"/>
+
+    <Button
+        android:id="@+id/ib_menu_knit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="2sp"
+        android:layout_marginEnd="2sp"
+        android:backgroundTint="@color/white_300"
+        android:text="TABLES"/>
+
+    <Button
+        android:id="@+id/ib_menu_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="2sp"
+        android:layout_marginEnd="4sp"
+        android:backgroundTint="@color/white_300"
+        android:text="WAITERS"/>
+
+
+    </LinearLayout>
