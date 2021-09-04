@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white_100"
+    android:padding="20sp">
+    <!--
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_sews_add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_dialog_sew_add"
+                        android:layout_width="200sp"
+                        android:layout_height="200sp"
+                        android:src="@drawable/b8356a30ad9840248120f80f652bfaa3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fb_sews_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10sp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_image_search"
+                        app:fabSize="mini"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_dialog_sew_add"
+                        app:layout_constraintEnd_toEndOf="@id/iv_dialog_sew_add"
+                        android:contentDescription="TODO" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ScrollView
+                android:id="@+id/sv_sews_add"
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:layout_marginTop="10sp"
+                android:background="@color/white_100"
+                app:layout_constraintTop_toBottomOf="@id/cl_sews_add_image"
+                app:layout_constraintBottom_toTopOf="@id/ll_sews_add_buttons"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:scrollbarThumbVertical="@color/teal_700">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="36sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:textColor="@color/dark_800"
+                                        android:text="Project name:"
+                                        android:textSize="14sp"/>
+
+                                    <EditText
+                                        android:id="@+id/et_dialog_sew_add_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginStart="2sp"
+                                        android:hint="red dress"
+                                        android:textSize="16sp"
+                                        android:backgroundTint="@color/blue_700"
+                                        android:textColor="@color/dark_800"
+                                        android:textColorHint="@color/dark_600"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:textColor="@color/dark_800"
+                                        android:text="Chosen size:"
+                                        android:textSize="14sp"/>
+
+                                    <Spinner
+                                        android:id="@+id/s_dialog_sew_add_size"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2sp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/blue_700"
+                                        android:spinnerMode="dropdown"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14sp"
+                                android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:textColor="@color/dark_800"
+                                        android:text="Measurements:"
+                                        android:textSize="14sp"/>
+
+
+                                    <EditText
+                                        android:id="@+id/et_dialog_sew_add_measurements"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginStart="2sp"
+                                        android:hint="XX,YY,ZZ - AA,BB,CC - 11,22,33"
+                                        android:backgroundTint="@color/blue_700"
+                                        android:textColor="@color/dark_800"
+                                        android:textColorHint="@color/dark_600" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14sp"
+                                android:gravity="center">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:textColor="@color/dark_800"
+                                        android:text="Recommended material:"
+                                        android:textSize="14sp"/>
+
+
+                                    <EditText
+                                        android:id="@+id/et_dialog_sew_add_material"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginStart="2sp"
+                                        android:hint="ex. wool"
+                                        android:backgroundTint="@color/blue_700"
+                                        android:textColor="@color/dark_800"
+                                        android:textColorHint="@color/dark_600"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:textColor="@color/dark_800"
+                                        android:text="Extra material:"
+                                        android:textSize="16sp"/>
+
+
+                                    <EditText
+                                        android:id="@+id/et_dialog_sew_add_material_extra"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2sp"
+                                        android:layout_weight="1"
+                                        android:hint="ex. leather belt"
+                                        android:backgroundTint="@color/blue_700"
+                                        android:textColor="@color/dark_800"
+                                        android:textColorHint="@color/dark_600"/>
+
+                            </LinearLayout>
+
+                    </LinearLayout>
+
+            </ScrollView>
+
+
+            <LinearLayout
+                android:id="@+id/ll_sews_add_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50sp"
+                app:layout_constraintTop_toBottomOf="@id/sv_sews_add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                    <Button
+                        android:id="@+id/b_dialog_sew_add_dismiss"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4sp"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="CANCEL"
+                        android:textColor="@color/white_100"
+                        android:backgroundTint="@color/dark_800"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/b_dialog_sew_add_confirm"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4sp"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="CONFIRM"
+                        android:textColor="@color/white_100"
+                        android:backgroundTint="@color/blue_400"
+                        android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

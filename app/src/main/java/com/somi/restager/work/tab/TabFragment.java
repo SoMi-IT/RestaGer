@@ -38,16 +38,16 @@ public class TabFragment extends Fragment implements Button.OnClickListener, Wor
 
         View rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
 
-        b_orders = rootView.findViewById(R.id.ib_menu_orders);
+        b_orders = rootView.findViewById(R.id.b_menu_orders);
         b_orders.setOnClickListener(this);
 
-        b_tables = rootView.findViewById(R.id.ib_menu_tables);
+        b_tables = rootView.findViewById(R.id.b_menu_tables);
         b_tables.setOnClickListener(this);
 
-        b_waiters = rootView.findViewById(R.id.ib_menu_waiters);
+        b_waiters = rootView.findViewById(R.id.b_menu_waiters);
         b_waiters.setOnClickListener(this);
 
-        b_menu = rootView.findViewById(R.id.ib_menu_menu);
+        b_menu = rootView.findViewById(R.id.b_menu_menu);
         b_menu.setOnClickListener(this);
 
 

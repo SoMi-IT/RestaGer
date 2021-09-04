@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public interface OrdersManagerListener {
 
-    void dataUpdated(ArrayList<Order> orders, int donePosition, int currentPosition, int newPosition);
+    void OnDataUpdated(ArrayList<Order> orders, int postion);
+    void OnAllDataUpdated(ArrayList<Order> orders);
 
-}//TaskDataManagerListener
+}//OrdersManagerListener

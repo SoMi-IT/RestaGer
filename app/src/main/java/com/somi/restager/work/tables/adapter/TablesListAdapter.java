@@ -74,11 +74,18 @@ public class TablesListAdapter extends RecyclerView.Adapter<TablesListAdapter.Ta
 
         holder.tv_number.setText(table.getNumber()+"");
 
-        if(table.isFree())holder.tv_status.setText("Free");
-        else holder.tv_status.setText("Taken");
-
         holder.tv_room.setText(table.getRoom());
         holder.tv_seats.setText(table.getSeats()+"");
+
+        if (table.isFree()) {
+            holder.cv_card.setCardBackgroundColor(context.getColor(R.color.blue_700));
+            holder.tv_status.setText("Free");
+
+        }else {
+            holder.cv_card.setCardBackgroundColor(context.getColor(R.color.dark_800));
+            holder.tv_status.setText("Taken");
+
+        }
 
         holder.iv_notes.setOnClickListener(v -> {
 

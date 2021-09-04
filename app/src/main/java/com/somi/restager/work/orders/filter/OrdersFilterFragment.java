@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -27,8 +28,10 @@ public class OrdersFilterFragment extends Fragment implements ImageView.OnClickL
 
     private OrderFilter orderFilter;
 
-    private Spinner s_filterTypes;
+    ArrayAdapter<String> adapter;
 
+    private TextView tv_amount;
+    private Spinner s_filterTypes;
     private ImageButton ib_sort;
 
 
@@ -38,8 +41,10 @@ public class OrdersFilterFragment extends Fragment implements ImageView.OnClickL
 
         View rootView = inflater.inflate(R.layout.fragment_orders_filter, container, false);
 
+        tv_amount = rootView.findViewById(R.id.tv_orders_filter_amount);
+
         s_filterTypes = rootView.findViewById(R.id.s_orders_filter);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, R.layout.spinner_custom, OrderFilter.ORDER_FILTERS);
+        adapter = new ArrayAdapter<String>(activity, R.layout.spinner_custom, OrderFilter.ORDER_FILTERS);
         s_filterTypes.setAdapter(adapter);
         s_filterTypes.setOnItemSelectedListener(this);
 
@@ -53,16 +58,24 @@ public class OrdersFilterFragment extends Fragment implements ImageView.OnClickL
     }//onCreateView
 
 
+    private void updateAmount() {
+
+        tv_amount.setText("");
+
+    }//initFilter
+
+
     private void initFilter() {
 
         orderFilter = new OrderFilter();
-        orderFilter.setType(OrderFilter.ORDER_TYPE_FILTER_ID);
-        orderFilter.setType(OrderFilter.ORDER_TYPE_FILTER_SORT_INCREASING);
+        orderFilter.setType(OrderFilter.ORDER_FILTER_ID);
+        orderFilter.setSortType(OrderFilter.ORDER_TYPE_FILTER_SORT_INCREASING);
 
         updateFilter();
         updateSortFilter();
 
     }//initFilter
+
 
     private void updateSortFilter() {
 
@@ -78,7 +91,7 @@ public class OrdersFilterFragment extends Fragment implements ImageView.OnClickL
 
     private void updateFilter() {
 
-        s_filterTypes.setSelection(orderFilter.getType());
+        s_filterTypes.setSelection(adapter.getPosition(orderFilter.getType()));
 
     }//updateSortFilter
 
@@ -106,7 +119,7 @@ public class OrdersFilterFragment extends Fragment implements ImageView.OnClickL
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        orderFilter.setType(position);
+        orderFilter.setType(OrderFilter.ORDER_FILTERS[position]);
         if(listener != null) listener.OnNewFilter(orderFilter);
 
     }//onItemSelected

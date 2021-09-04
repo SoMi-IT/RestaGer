@@ -33,14 +33,22 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
 
     }//constructor
 
-    public void updateOrders(ArrayList<Order> _orders) {
 
+    public void updateAllOrders(ArrayList<Order> _orders) {
 
         orders = _orders;
         notifyDataSetChanged();
 
-    }//constructor
+    }//updateAllOrders
 
+
+    public void updateOrder(ArrayList<Order> _orders, int position) {
+
+
+        orders = _orders;
+        notifyItemChanged(position);
+
+    }//updateOrder
 
     public void setListener(OrdersListAdapterListener _OrdersListAdapterListener){
 
@@ -75,48 +83,42 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
         holder.tv_time.setText(new SimpleDateFormat("HH:mm").format(order.getTime()));
         holder.tv_plates.setText(order.getOrderedPlates().size()+"");
 
-        holder.iv_notes.setOnClickListener(v -> {
+        holder.iv_info.setOnClickListener(v -> {
 
             if (listener != null) listener.onItemNotesClicked(orders.get(holder.getAdapterPosition()));
 
         });
 
-        holder.iv_location.setOnClickListener(v -> {
 
-            if (listener != null) listener.onItemLocationClicked(orders.get(holder.getAdapterPosition()));
-
-        });
-
-
-        if (order.getStatus() == Order.ORDER_STATUS_STARTED) {
+        if (order.getStatus().equals(Order.ORDER_STATUS_STARTED)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.blue_700));
-            holder.tv_status.setText("Started");
+            holder.tv_status.setText(Order.ORDER_STATUS_STARTED);
 
-        }else if (order.getStatus() == Order.ORDER_STATUS_PREPARATION) {
+        }else if (order.getStatus().equals(Order.ORDER_STATUS_PREPARATION)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.blue_700));
-            holder.tv_status.setText("Preparation");
+            holder.tv_status.setText(Order.ORDER_STATUS_PREPARATION);
 
-        }else if (order.getStatus() == Order.ORDER_STATUS_READY) {
+        }else if (order.getStatus().equals(Order.ORDER_STATUS_READY)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.teal_700));
-            holder.tv_status.setText("Ready");
+            holder.tv_status.setText(Order.ORDER_STATUS_READY);
 
-        }else if (order.getStatus() == Order.ORDER_STATUS_INCOMING) {
+        }else if (order.getStatus().equals(Order.ORDER_STATUS_INCOMING)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.blue_700));
-            holder.tv_status.setText("Incoming");
+            holder.tv_status.setText(Order.ORDER_STATUS_INCOMING);
 
-        }else if (order.getStatus() == Order.ORDER_STATUS_DELIVERED) {
+        }else if (order.getStatus().equals(Order.ORDER_STATUS_DELIVERED)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.dark_800));
-            holder.tv_status.setText("Deliverd");
+            holder.tv_status.setText(Order.ORDER_STATUS_DELIVERED);
 
-        }else if (order.getStatus() == Order.ORDER_STATUS_DISMISSED) {
+        }else if (order.getStatus().equals(Order.ORDER_STATUS_DISMISSED)) {
 
             holder.cv_card.setCardBackgroundColor(context.getColor(R.color.dark_600));
-            holder.tv_status.setText("Aborted");
+            holder.tv_status.setText(Order.ORDER_STATUS_DISMISSED);
 
         }
 
@@ -132,8 +134,7 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
         TextView tv_table;
         TextView tv_time;
         TextView tv_plates;
-        ImageView iv_notes;
-        ImageView iv_location;
+        ImageView iv_info;
 
         OrdersListAdapterItemView(View itemView) {
 
@@ -144,8 +145,7 @@ public class OrdersListAdapter extends RecyclerView.Adapter<OrdersListAdapter.Or
             tv_table = itemView.findViewById(R.id.tv_order_item_table);
             tv_time = itemView.findViewById(R.id.tv_order_item_time);
             tv_plates = itemView.findViewById(R.id.tv_order_item_plates);
-            iv_notes = itemView.findViewById(R.id.iv_order_item_notes);
-            iv_location = itemView.findViewById(R.id.iv_order_item_location);
+            iv_info = itemView.findViewById(R.id.iv_order_item_notes);
 
         }
 

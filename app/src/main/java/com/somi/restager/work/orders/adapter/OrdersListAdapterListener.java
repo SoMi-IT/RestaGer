@@ -8,6 +8,5 @@ public interface OrdersListAdapterListener {
 
     void onItemClicked(Order order);
     void onItemNotesClicked(Order order);
-    void onItemLocationClicked(Order order);
 
 }//OrdersListAdapterListener

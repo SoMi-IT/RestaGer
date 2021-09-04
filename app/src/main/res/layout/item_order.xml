@@ -140,30 +140,15 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0sp"
-            android:orientation="vertical"
-            android:gravity="center"
+        <ImageView
+            android:id="@+id/iv_order_item_notes"
+            android:layout_width="28sp"
+            android:layout_height="28sp"
+            android:layout_marginBottom="8sp"
+            app:srcCompat="@android:drawable/ic_dialog_info"
             app:layout_constraintTop_toTopOf="@id/tv_order_item_id"
             app:layout_constraintBottom_toBottomOf="@id/ll_order_item_base"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageView
-                android:id="@+id/iv_order_item_notes"
-                android:layout_width="28sp"
-                android:layout_height="28sp"
-                android:layout_marginBottom="8sp"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
-
-            <ImageView
-                android:id="@+id/iv_order_item_location"
-                android:layout_width="28sp"
-                android:layout_height="28sp"
-                android:layout_marginTop="8sp"
-                app:srcCompat="@android:drawable/ic_dialog_map"/>
-
-        </LinearLayout>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
